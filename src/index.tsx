@@ -9,7 +9,7 @@ const myWorker = new MyWorker();
 
 myWorker.onmessage = event => {
     // ...
-    console.log(event);
+    console.log('event.data main thread', event.data);
 };
 
 myWorker.postMessage('hello worker');

@@ -3,7 +3,7 @@
 
 const ctx: Worker = self as any;
 
-ctx.onmessage = event => {
+ctx.onmessage = (event) => {
     // ...
     console.log(event);
     ctx.postMessage('hello main thread');

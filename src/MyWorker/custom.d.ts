@@ -1,4 +1,3 @@
-// src/MyWorker/custom.d.ts
 declare module 'worker-loader!*' {
     class WebpackWorker extends Worker {
         constructor();
@@ -6,3 +5,9 @@ declare module 'worker-loader!*' {
 
     export default WebpackWorker;
 }
+
+
+/* 
+	how is worker defined? 
+	how is the even type defined? 
+*/
