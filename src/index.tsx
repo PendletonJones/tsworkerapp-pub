@@ -9,8 +9,7 @@ const myWorker = new MyWorker();
 
 const mySecondWorker = new MyWorker();
 
-const worker_channel = new MessageChannel();
-
+const workerChannel = new MessageChannel();
 
 /* first worker */
 myWorker.onmessage = event => {
@@ -19,7 +18,7 @@ myWorker.onmessage = event => {
 };
 
 myWorker.postMessage('hello to first worker from main');
-myWorker.postMessage('sending over the port', [worker_channel.port1]);
+myWorker.postMessage('sending over the port', [workerChannel.port1]);
 
 /* second worker */
 
@@ -27,7 +26,7 @@ mySecondWorker.onmessage = event => {
 	console.log('evnet from second worker', event.data)
 }
 mySecondWorker.postMessage('hello to second worker from main');
-myWorker.postMessage('sending over the port to worker 2', [worker_channel.port2]);
+myWorker.postMessage('sending over the port to worker 2', [workerChannel.port2]);
 
 ReactDOM.render(
   <App />,
